@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel ="stylesheet" href="./style.css">
+    <style>@import url('https://fonts.googleapis.com/css?family=Fredoka+One');</style>
+    <style>@import url('https://fonts.googleapis.com/css?family=Cabin');</style>
+    <title>Trivia Game ☭ </title>
+</head>
+<body>
+
+  
+        
+       
+            <h1>♫ Music Trivia ♫ </h1>
+            <button id="btnStart" type= "button">Start Game!</button>
+            <!-- Main section -->
+            <div class= "main">
+                <!-- Question section -->
+                <div class = "game">
+                    <div id = "countdown"></div><!-- Countdown container, start with 10 -->
+                    <div id ="question-block"></div>
+                    <ul id = "answer-block"></ul>
+                    <button id="btnHint" type= "button"> Hint! </button><!-- 50/50 hint button -->
+                    <button id="btnReset" type= "button">Reset Game</button>  <!-- reset -->
+                </div>
+                <!-- Score panel section-->
+                <div class = "scorepanel">
+                    <h2>Total Score</h2>
+                    <div id="totalquestions">Questions  <span>5</span></div>
+                    <div id="correctqs">Correct answers  <span>0</span></div> <!-- Counter win game -->
+                    <div id="incorrectqs">Incorrect answers <span>0</span></div> <!-- Counter unanswered game -->
+                </div>
+        </div>    
+        <!-- end of main section -->
+        
+
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="../Trivia-Game/src/app.js"></script>
+    <script type="text/javascript" src="../Trivia-Game/src/main.js"></script>
+</body>
+</html>

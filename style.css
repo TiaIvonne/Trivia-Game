@@ -1,0 +1,134 @@
+
+
+body{
+        flex-direction: column;
+        justify-content: center;
+        align-content: center;
+        align-items: center;
+        display: flex; 
+        /* font-size: 18px; */
+        background:linear-gradient(10deg, rgba(244,235,160,1) 43%,rgba(192,250,202,1) 43%);
+        
+        
+        
+}
+.main{
+        display: flex;
+        flex-direction: row;
+        align-items: initial;
+        font-size: 20px;
+       
+}
+h1{
+        font-family: 'Fredoka One', cursive;
+        color:#c365eb;
+        font-size: -webkit-xxx-large;
+        float: center;
+
+}
+
+#question-block{
+        float: center;
+}
+
+
+button{
+        text-decoration: none;
+        padding: 10px;
+        font-weight: 600;
+        font-size: 20px;
+        color: #ffffff;
+        background-color:#d7a7eb;
+        border-radius: 6px;
+
+        
+}
+
+
+.game{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-content: center;
+        align-items: center;
+        font-family:'Cabin', sans-serif;
+        margin: 10px; 
+        padding: 10px; 
+        height: 600px;
+        width: 100%;
+        background-color:  rgba(192,250,202,1);
+        /* border attributes */
+        border-radius: 11px 11px 11px 11px;
+        -moz-border-radius: 11px 11px 11px 11px;
+        -webkit-border-radius: 11px 11px 11px 11px;
+        border: 0px solid #000000;
+}
+
+
+
+.scorepanel{
+        margin: 10px;
+        height: 200px;
+        width: 50%;
+        font-family: 'Fredoka One', cursive;
+        color:#c365eb;
+}
+
+li{
+        border: 0px solid #000000;
+        margin: 10px;
+        background-color: #d7a7eb;
+        width: 300px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 7px 7px 7px 7px;
+        -moz-border-radius: 7px 7px 7px 7px;
+        -webkit-border-radius: 7px 7px 7px 7px;
+        border: 0px solid #000000;
+    
+}
+
+li:hover{
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1)
+        }
+
+
+
+
+
+
+ul{
+        padding: 0%;
+}
+
+
+
+#countdown{
+        
+        width:70px;
+        height:70px;
+        border-radius:50%;
+        /* border:5px solid #c365eb; */
+        background-color: #d7a7eb;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+        animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate; 
+
+
+        
+}
+
+    
+ @keyframes blinker { 
+        from { opacity: 2; } 
+        to { opacity: 0; } 
+} 
