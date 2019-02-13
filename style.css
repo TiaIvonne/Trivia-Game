@@ -25,6 +25,23 @@ h1{
         font-size: -webkit-xxx-large;
         float: center;
 
+
+}
+.category{
+        font-family: 'Fredoka One', cursive;
+        color:#c365eb;
+        float: center;
+        display: contents;
+        font-size: x-large;
+
+}
+
+p:hover{
+        -moz-transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        transform: scale(1.1)
 }
 
 #question-block{
@@ -119,12 +136,10 @@ ul{
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        align-items: center;
-    
-        animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate; 
-
-
-        
+        align-items: center;    
+        animation: blinker 0.1s cubic-bezier(0.42,0,1,1) infinite alternate; 
+        animation-duration: 10s;
+        animation-iteration-count: 1;
 }
 
     

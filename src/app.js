@@ -5,8 +5,9 @@ var TriviaGame = function (questions) {
     this.correctAnswer = 0; // save correct
     this.wrongAnswer = 0; // save incorrect
     this.unanswer = 0; //save unanswer
-    this.timeLeft = 30; // use for countdown
-    this.running = false;
+    this.timeLeft = 10; // use for countdown
+    this.id = 0;
+
     
     
 }
@@ -19,9 +20,9 @@ TriviaGame.prototype.shuffle = function () {
 }
 
 TriviaGame.prototype.downCounter = function(){
-var id = setInterval( () => {
+/*var*/ this.id = setInterval( () => {
     if(this.timeLeft == 0)
-        clearInterval(id);
+        clearInterval(this.id);
     else
         this.timeLeft --
         // console.log(this.timeLeft);
@@ -35,6 +36,7 @@ var id = setInterval( () => {
 
 
 TriviaGame.prototype.gameResult = function(choice, correct){
+  
     if(choice == correct){
         this.correctAnswer ++
         return true;
@@ -44,13 +46,26 @@ TriviaGame.prototype.gameResult = function(choice, correct){
         return false 
         
     }
+    
 }
 
 TriviaGame.prototype.stop = function(){
    
-    clearInterval(downCounter);
+    clearInterval(this.id);
 
 }
+
+TriviaGame.prototype.finishedGame = function(){
+    if((this.correctAnswer + this.wrongAnswer) === 5){
+        alert("You finished!!")
+    }
+}
+
+
+
+
+
+
 
 
 
