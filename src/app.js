@@ -5,7 +5,7 @@ var TriviaGame = function (questions) {
     this.correctAnswer = 0; // save correct
     this.wrongAnswer = 0; // save incorrect
     this.unanswer = null; //save unanswer
-    this.timeLeft = 10; // use for countdown
+    this.timeLeft = 20; // use for countdown
     this.id = 0;
     this.running = false;
 
@@ -25,12 +25,6 @@ TriviaGame.prototype.downCounter = function(){
     if(this.timeLeft == 0){
         clearInterval(this.id);
         this.unanswer++
-        if(this.unanswer > 0){
-           alert("you lose");
-           $("#btnReset").show()
-        }
-        
-    
     }else{
         this.timeLeft --
         $("#countdown").text(this.timeLeft);
