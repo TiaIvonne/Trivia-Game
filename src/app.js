@@ -4,9 +4,10 @@ var TriviaGame = function (questions) {
     this.answer = []; //save choose answer
     this.correctAnswer = 0; // save correct
     this.wrongAnswer = 0; // save incorrect
-    this.unanswer = 0; //save unanswer
+    this.unanswer = null; //save unanswer
     this.timeLeft = 10; // use for countdown
     this.id = 0;
+    this.running = false;
 
     
     
@@ -21,45 +22,73 @@ TriviaGame.prototype.shuffle = function () {
 
 TriviaGame.prototype.downCounter = function(){
 /*var*/ this.id = setInterval( () => {
-    if(this.timeLeft == 0)
+    if(this.timeLeft == 0){
         clearInterval(this.id);
-    else
+        this.unanswer++
+        if(this.unanswer > 0){
+           alert("you lose");
+           $("#btnReset").show()
+        }
+        
+    
+    }else{
         this.timeLeft --
-        // console.log(this.timeLeft);
-        // console.log(this.timeLeft);
         $("#countdown").text(this.timeLeft);
         // return this.timeLeft;
-    
+    }
 }, 1000);
+
+
 
 }
 
 
 TriviaGame.prototype.gameResult = function(choice, correct){
   
+
+    // if(choice.length == 0 || choice.length == undefined) {
+    //     this.unanswer ++
+    //     console.log("no answer")
+    //     return false;
+        
+    // }
     if(choice == correct){
         this.correctAnswer ++
         return true;
         
-    }else{
+    }else {
         this.wrongAnswer ++
         return false 
-        
     }
-    
+  
+
 }
 
 TriviaGame.prototype.stop = function(){
-   
+    
     clearInterval(this.id);
+    
 
 }
 
 TriviaGame.prototype.finishedGame = function(){
     if((this.correctAnswer + this.wrongAnswer) === 5){
-        alert("You finished!!")
+        $("#answer-block").empty();
+        $("#countdown").remove();
+        $("#question-block").empty();
+        $(".game").hide();
+        $(".scorepanel").show()
+        $("#btnReset").show()
+       
     }
 }
+
+TriviaGame.prototype.reset = function(){
+    this.timeLeft = 10;
+}
+
+
+
 
 
 

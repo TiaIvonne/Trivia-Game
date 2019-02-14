@@ -7,17 +7,15 @@
     <link rel ="stylesheet" href="./style.css">
     <style>@import url('https://fonts.googleapis.com/css?family=Fredoka+One');</style>
     <style>@import url('https://fonts.googleapis.com/css?family=Cabin');</style>
-    <title>Trivia Game ☭ </title>
+    <title>Trivia Game </title>
 </head>
 <body>
-
-  
         
-       
+
             <h1>♫ Music Quiz ♫ </h1>
             <div class = "category">
                 <h2>Choose a category</h2>
-                <p id="80">80's music</p>
+                <p id="80">80's music not yet</p>
                 <p id="music-movies">Music and movies</p>
                 <button id="btnStart" type= "button">Start Game!</button>
             </div>
@@ -26,12 +24,16 @@
             <div class= "main">
                 <!-- Question section -->
                 <div class = "game">
-                    <div id = "countdown"></div><!-- Countdown container, start with 10 -->
+                    <div id = "countdown">10</div><!-- Countdown container, start with 10 -->
                     <div id ="question-block"></div>
                     <ul id = "answer-block"></ul>
                     <button id="btnHint" type= "button"> Hint! </button><!-- 50/50 hint button -->
-                    <button id="btnReset" type= "button">Next</button>  <!-- reset -->
+                    
                 </div>
+                <iframe src="https://open.spotify.com/embed/user/d0nfil0fi0/playlist/5KdY4jjfofy6kIjV1rx7KN" 
+                width="300" height="200" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                
+            </div>
                 <!-- Score panel section-->
                 <div class = "scorepanel">
                     <h2>Total Score</h2>
@@ -39,8 +41,11 @@
                     <div id="correctqs">Correct answers  <span>0</span></div> <!-- Counter win game -->
                     <div id="incorrectqs">Incorrect answers <span>0</span></div><!-- Counter unanswered game -->
                     <!-- <div id="unanswered">Unanswer questions <span>0</span></div> -->
+                    <button id="btnReset" type= "button">Reset</button> 
+
                 </div>
-        </div>    
+                
+        
         <!-- end of main section -->
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
     <script type="text/javascript" src="./src/app.js"></script>
