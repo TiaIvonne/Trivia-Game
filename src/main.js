@@ -105,21 +105,20 @@ function displayQuestion(numberOfQuestion) {
                 $("#incorrectqs").text("Incorrect answers " + triviaGame.wrongAnswer);
             }
      
-            triviaGame.finishedGame();
-    
-                setTimeout(()=>{ 
-                $("#answer-block").empty();
-                $("#image").empty();
-                triviaGame.reset();
-                triviaGame.unanswer;
-                $("#countdown").text(triviaGame.timeLeft);
-                triviaGame.downCounter();
-                displayQuestion(triviaGame.answer.length);
+        triviaGame.finishedGame();
+        setTimeout(()=>{ 
+            $("#answer-block").empty();
+            $("#image").empty();
+            triviaGame.reset();
+            $("#countdown").text(triviaGame.timeLeft);
+            triviaGame.downCounter();
+            displayQuestion(triviaGame.answer.length);
                     
-                },5000)
+            },3000)
 
-        $("#btnReset").click(function(){
+            $("#btnReset").click(function () {
             location.reload();
+        
         })
     });
 }

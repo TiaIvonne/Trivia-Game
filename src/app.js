@@ -23,29 +23,25 @@ TriviaGame.prototype.downCounter = function(){
 
     if(this.timeLeft === 0){
         clearInterval(this.id);
-        this.unanswer++
-        console.log("unanser question " + this.unanswer)
-        return this.unanswer;
+        this.generateLoss();
         
-    
     }else{
         this.timeLeft --
         $("#countdown").text(this.timeLeft);
         return this.timeLeft;
     }
 }, 1000);
-
-
 }
 
-
-
-TriviaGame.prototype.prueba = function () {
-    if(this.unanswer > 0){
-        console.log(this.unanswer)
-    }
+TriviaGame.prototype.generateLoss = function(){
+    this.unanswer++
+    this.stop();
+    this.finishedGame()
+    $("#answer-block").show().text("You didn't answer the question :( ")
+    setTimeout(4000);
     
 }
+
 
 
 TriviaGame.prototype.gameResult = function(choice, correct){
@@ -73,12 +69,22 @@ TriviaGame.prototype.finishedGame = function(){
         $(".game").hide();
         $(".scorepanel").show()
         $("#btnReset").show()
-       
+    }   
+    else if (this.unanswer ===1){
+        $("#answer-block").empty();
+        $(".game").hide()
+        $(".scorepanel").show()
+        $("#btnReset").show()
+        $("#unanswered").text("Unanswer question " + triviaGame.unanswer)
+        $("#btnReset").click(function () {
+                      location.reload();
+        })
     }
 }
 
 TriviaGame.prototype.reset = function(){
     this.timeLeft = 10;
+    
 }
 
 
